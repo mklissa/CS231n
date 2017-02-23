@@ -1,5 +1,5 @@
 import numpy as np
-
+import pdb
 from cs231n import optim
 
 
@@ -167,6 +167,7 @@ class Solver(object):
 
     # Perform a parameter update
     for p, w in self.model.params.iteritems():
+
       dw = grads[p]
       config = self.optim_configs[p]
       next_w, next_config = self.update_rule(w, dw, config)
@@ -262,5 +263,6 @@ class Solver(object):
             self.best_params[k] = v.copy()
 
     # At the end of training swap the best params into the model
+
     self.model.params = self.best_params
 
